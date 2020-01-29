@@ -1,0 +1,15 @@
+<mat-toolbar
+    color="primary"
+    class="layout-header mat-elevation-z6"
+    [class.is-mobile]="isMobile"
+>
+    <button
+        mat-icon-button
+        (click)="toogle()"
+    >
+        <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">{{title}}</h1>
+    <span class="fill-remaining-space"></span>
+    <span>Right Aligned Text</span>
+</mat-toolbar>

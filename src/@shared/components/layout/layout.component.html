@@ -1,0 +1,50 @@
+<div
+    class="app-container"
+    [class.is-mobile]="mobileQuery.matches"
+>
+    <app-layout-header
+        [title]="appTitle"
+        (toogleSidebar)="snav.toggle()"
+        [isMobile]="mobileQuery.matches"
+        style="z-index: 2"
+    ></app-layout-header>
+
+    <mat-sidenav-container
+        [style.marginTop.px]="mobileQuery.matches ? fixedTopPx : 0"
+        class="sidenav-container"
+    >
+        <mat-sidenav
+            #snav
+            [mode]="mobileQuery.matches ? 'over' : 'side'"
+            [fixedInViewport]="mobileQuery.matches"
+            [fixedTopGap]="fixedTopPx"
+            [opened]="true"
+        >
+            <mat-nav-list>
+                <a
+                    mat-list-item
+                    routerLink="."
+                >
+                    asd
+                </a>
+                <a
+                    mat-list-item
+                    routerLink="."
+                >
+                    asfasf
+                </a>
+                <a
+                    mat-list-item
+                    routerLink="."
+                >
+                    qweqweqw
+                </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content class="main-container">
+            <ng-content></ng-content>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+</div>
